@@ -9,18 +9,18 @@ const Tasklis = ({data}) => {
   return (
     <div id = 'tasklis' className=' flex  overflow-auto mt-10 screen justify-between gap-5 '>
     
-       {data.tasks.map((e,idx)=>{
-         if (e.active){
-            return <AcceptTask key={idx} data={e} />
+       {data.tasks.map((elem,idx)=>{
+         if (elem.active){
+            return <AcceptTask key={idx} data={elem} />
          }
-         if (e.newTask){
-            return <NewTask key={idx} data={e} />
+         if (elem.newTask){
+            return <NewTask key={idx} data={elem} />
          }
-         if (e.completed){
-            return <CompleteTask key={idx} data={e} />
+         if (elem.completed){
+            return <CompleteTask key={idx} data={elem} />
          }
-         if (e.failed){
-            return <FailedTask key={idx} data={e}/>
+         if (elem.failed){
+            return <FailedTask key={idx} data={elem}/>
          }
        })}   
       

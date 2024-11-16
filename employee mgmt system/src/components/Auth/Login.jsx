@@ -10,8 +10,8 @@ const Login = ({handleLogin}) => {
         // console.log("email is ",email)
         // console.log("email is ",password)
         handleLogin(email,password)
-        setEmail('')
-        setPassword('')
+        setEmail("")
+        setPassword("")
     }
   return (
     <div className='flex h-screen w-screen items-center justify-center'>

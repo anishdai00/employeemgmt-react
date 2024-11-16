@@ -28,7 +28,7 @@ useEffect(() =>{
       setUser('admin')
       localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
     } else if (userData ){
-      const employee = userData.employees.find((e)=>email == e.email && password ==e.password)
+       const employee = userData.find((e)=>email == e.email && password ==e.password)
       if(employee){
        setUser('employee')
        setLoggedInUserData(employee)
@@ -44,7 +44,7 @@ useEffect(() =>{
   return (
     <>
     {!user ? <Login handleLogin={handleLogin} />:''}
-    {user ==='admin' ? <AdminDashboard/> :(user == 'employee' ?<EmployeeDashboard data ={loggedInUserData}/> :null)}
+    {user =='admin' ? <AdminDashboard changeUser={setUser}/> :(user =='employee' ?<EmployeeDashboard changeUser={setUser} data ={loggedInUserData}/> :null)}
     </>
   )
 }
